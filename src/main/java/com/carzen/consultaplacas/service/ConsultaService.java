@@ -31,7 +31,6 @@ public class ConsultaService {
     }
 
     public List<Consulta> listConsulta(){
-        consultaRepository.count();
         return consultaRepository.findAll();
     }
 
