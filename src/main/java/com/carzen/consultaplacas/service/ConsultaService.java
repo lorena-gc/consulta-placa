@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ConsultaService {
@@ -23,10 +24,15 @@ public class ConsultaService {
 
     public void saveConsulta(String placa, String token){
         Consulta consulta = new Consulta();
-        consulta.setData(new Date());
+        consulta.setDate(new Date());
         consulta.setPlaca(placa);
         consulta.setUsuario(usuarioService.findUsuarioByEmail(jwtTokenUtil.getUsernameFromToken(token)));
         consultaRepository.save(consulta);
+    }
+
+    public List<Consulta> listConsulta(){
+        consultaRepository.count();
+        return consultaRepository.findAll();
     }
 
 }

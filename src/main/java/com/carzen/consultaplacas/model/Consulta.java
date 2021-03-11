@@ -19,7 +19,7 @@ public class Consulta {
     private Usuario usuario;
 
     @Column(name = "date")
-    private Date data;
+    private Date date;
 
     public Long getId() {
         return id;
@@ -45,11 +45,11 @@ public class Consulta {
         this.usuario = usuario;
     }
 
-    public Date getData() {
-        return data;
+    public long getDate() {
+        return date.getTime();
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
