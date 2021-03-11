@@ -3,6 +3,7 @@ package com.carzen.consultaplacas.controller;
 import com.carzen.consultaplacas.config.jwt.JwtRequest;
 import com.carzen.consultaplacas.config.jwt.JwtResponse;
 import com.carzen.consultaplacas.config.jwt.JwtTokenUtil;
+import com.carzen.consultaplacas.dto.Response;
 import com.carzen.consultaplacas.dto.UsuarioDTO;
 import com.carzen.consultaplacas.service.JwtUserDetailsService;
 import com.carzen.consultaplacas.service.UsuarioService;
@@ -44,7 +45,7 @@ public class UsuarioController {
         authenticate(authenticationRequest.getEmail(), authenticationRequest.getPassword());
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getEmail());
         final String token = jwtTokenUtil.generateToken(userDetails);
-        return ResponseEntity.ok(new JwtResponse(token));
+        return ResponseEntity.ok(new Response(token));
     }
 
     private void authenticate(String username, String password) throws Exception {

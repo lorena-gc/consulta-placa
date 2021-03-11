@@ -16,6 +16,10 @@ public class Response {
         this.feedbacks.add(feedback);
     }
 
+    public Response(Object data) {
+        this.data = data;
+    }
+
     public ArrayList<Feedback> getFeedbacks() {
         return feedbacks;
     }
