@@ -37,7 +37,7 @@ public class UsuarioController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestBody UsuarioDTO usuarioDTO) throws Exception {
         usuarioService.createUsuario(usuarioDTO);
-        return ResponseEntity.ok("Usuário criado com sucesso");
+        return ResponseEntity.ok(new Response("USUARIO_CRIADO", "Usuario criado com sucesso", "SUCCESS") );
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
