@@ -1,7 +1,7 @@
 package com.carzen.consultaplacas.controller;
 
+import com.carzen.consultaplacas.dto.ConsultaDTO;
 import com.carzen.consultaplacas.dto.Response;
-import com.carzen.consultaplacas.model.Consulta;
 import com.carzen.consultaplacas.service.ConsultaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class ConsultaController {
 
     @RequestMapping(value="/listConsult", method= RequestMethod.GET)
     public ResponseEntity<?> listConsulta(){
-        ArrayList<Consulta> consultas = (ArrayList<Consulta>) consultaService.listConsulta();
+        ArrayList<ConsultaDTO> consultas = (ArrayList<ConsultaDTO>) consultaService.listConsulta();
         HashMap<String, Object> map = new HashMap<>();
         map.put("list", consultas);
         map.put("count", consultas.size());

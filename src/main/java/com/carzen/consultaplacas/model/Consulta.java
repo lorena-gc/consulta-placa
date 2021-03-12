@@ -45,8 +45,8 @@ public class Consulta {
         this.usuario = usuario;
     }
 
-    public long getDate() {
-        return date.getTime();
+    public Date getDate() {
+        return date;
     }
 
     public void setDate(Date date) {

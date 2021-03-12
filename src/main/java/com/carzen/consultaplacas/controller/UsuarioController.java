@@ -1,7 +1,6 @@
 package com.carzen.consultaplacas.controller;
 
 import com.carzen.consultaplacas.config.jwt.JwtRequest;
-import com.carzen.consultaplacas.config.jwt.JwtResponse;
 import com.carzen.consultaplacas.config.jwt.JwtTokenUtil;
 import com.carzen.consultaplacas.dto.Response;
 import com.carzen.consultaplacas.dto.UsuarioDTO;
@@ -14,7 +13,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -36,8 +34,11 @@ public class UsuarioController {
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> createUser(@RequestBody UsuarioDTO usuarioDTO) throws Exception {
-        usuarioService.createUsuario(usuarioDTO);
-        return ResponseEntity.ok(new Response("USUARIO_CRIADO", "Usuario criado com sucesso", "SUCCESS") );
+        Response response = usuarioService.createUsuario(usuarioDTO);
+        if(response.getFeedbacks().get(0).getType().equals("ERROR"))
+            return ResponseEntity.status(400).body(response);
+        else
+            return ResponseEntity.ok(new Response(response));
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)

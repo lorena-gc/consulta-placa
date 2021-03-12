@@ -1,8 +1,8 @@
 package com.carzen.consultaplacas.service;
 
 import com.carzen.consultaplacas.config.jwt.JwtTokenUtil;
+import com.carzen.consultaplacas.dto.ConsultaDTO;
 import com.carzen.consultaplacas.model.Consulta;
-import com.carzen.consultaplacas.model.Usuario;
 import com.carzen.consultaplacas.repository.ConsultaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +30,8 @@ public class ConsultaService {
         consultaRepository.save(consulta);
     }
 
-    public List<Consulta> listConsulta(){
-        return consultaRepository.findAll();
+    public List<ConsultaDTO> listConsulta(){
+        return ConsultaDTO.from(consultaRepository.findAll());
     }
 
 }

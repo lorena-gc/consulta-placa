@@ -1,5 +1,6 @@
 package com.carzen.consultaplacas.controller;
 
+import com.carzen.consultaplacas.dto.AgregadoDTO;
 import com.carzen.consultaplacas.dto.Response;
 import com.carzen.consultaplacas.model.Agregado;
 import com.carzen.consultaplacas.service.AgregadoService;
@@ -23,7 +24,7 @@ public class AgregadoController {
                                                  @RequestHeader("Authorization") String token){
         Agregado agregado = agregadoService.findAgregadoByPlaca(placa);
         consultaService.saveConsulta(placa, token);
-        return ResponseEntity.ok(new Response(agregado));
+        return ResponseEntity.ok(new Response(AgregadoDTO.from(agregado)));
     }
 
 }
