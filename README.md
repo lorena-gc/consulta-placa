@@ -41,8 +41,10 @@ curl --location --request GET '{{url}}/vehicle/listConsult' \
 ```
 
 # Documentação da API
-A documentação é gerada a partir do Swagger, e pode ser consultada no seguinte caminho: {{url}}/swagger-ui.html
+A documentação é gerada a partir do Swagger, e pode ser consultada no seguinte caminho: `{{url}}/swagger-ui.html`
 
 # Disponibilização no Heroku
-A aplicação encontra disponibilizada no servidor de aplição Heroku, com integração contínua, realizando deploy automático perante alterações da branch `main`
-Para facilitar os testes é possível realizar as requisições anteriores ou consultar a documentação substituindo a expressão {{url}} pelo endereço da aplicação no Heroku: lorena
+A aplicação encontra-se disponibilizada no servidor de aplição Heroku, com integração contínua, realizando deploy automático perante alterações da branch `main`
+Para facilitar os testes é possível realizar as requisições anteriores ou consultar a documentação substituindo a expressão `{{url}}` pelo endereço da aplicação no Heroku.
+- Endereço no Heroku: 
+- Documentação no Heroku: 
