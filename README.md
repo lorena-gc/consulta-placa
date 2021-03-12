@@ -46,5 +46,5 @@ A documentação é gerada a partir do Swagger, e pode ser consultada no seguint
 # Disponibilização no Heroku
 A aplicação encontra-se disponibilizada no servidor de aplição Heroku, com integração contínua, realizando deploy automático perante alterações da branch `main`
 Para facilitar os testes é possível realizar as requisições anteriores ou consultar a documentação substituindo a expressão `{{url}}` pelo endereço da aplicação no Heroku.
-- Endereço no Heroku: 
-- Documentação no Heroku: 
+- Endereço no Heroku: https://desafio-consulta-placa.herokuapp.com/
+- Documentação no Heroku: https://desafio-consulta-placa.herokuapp.com/swagger-ui.html
